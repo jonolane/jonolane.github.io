@@ -3,7 +3,7 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   pathPrefix: '',
   siteMetadata: {
-    title: `jono-lane`,
+    title: `Jono Lane`,
     siteUrl: `https://www.jonolane.github.io/public`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.

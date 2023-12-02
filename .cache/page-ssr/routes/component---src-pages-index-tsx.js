@@ -1,9 +1,12 @@
 "use strict";
-exports.id = 691;
-exports.ids = [691];
+exports.id = "component---src-pages-index-tsx";
+exports.ids = ["component---src-pages-index-tsx"];
 exports.modules = {
 
-/***/ 7200:
+/***/ "./src/pages/index.tsx?export=default":
+/*!********************************************!*\
+  !*** ./src/pages/index.tsx?export=default ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -11,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Head: () => (/* binding */ Head),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4410);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 const pageStyles = {

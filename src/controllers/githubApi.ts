@@ -1,31 +1,47 @@
-import { Octokit } from "@octokit/rest";
-import { createOAuthAppAuth, OAuthAppDeviceFlowAuthOptions } from "@octokit/auth-oauth-app";
-
 async function authenticateToGitHub() {
-  const auth = createOAuthAppAuth({
-    clientId: "f4dd4b030b4403ade3cb",
-    clientSecret: "39f3bf3502df43c59aa044284659bc75449411d2",
-  });
-
-  const authentication = await auth({
-    type: "oauth-user",
-    onVerification: () => {
-      // Handle the verification process here if needed
-    },
-  } as OAuthAppDeviceFlowAuthOptions);
-
-  console.log("Authentication successful");
-
-  const octokit = new Octokit({
-    auth: authentication.token,
-  });
-
-  // Use the authenticated Octokit instance to make API requests
-  const response = await octokit.repos.listForAuthenticatedUser();
-  console.log(response.data);
-}
-
-authenticateToGitHub().catch(console.error);
+    const clientId = "f4dd4b030b4403ade3cb";
+    const clientSecret = "39f3bf3502df43c59aa044284659bc75449411d2";
+    const scopes = ["repo"];
+  
+    // Step 1: Get the access token
+    const response = await fetch(
+      `/api/github/access_token?client_id=${clientId}&client_secret=${clientSecret}`,
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          grant_type: "client_credentials",
+          scope: scopes.join(" "),
+        }),
+      }
+    );
+  
+    if (!response.ok) {
+      throw new Error("Failed to authenticate with GitHub");
+    }
+  
+    const data = await response.json();
+    const accessToken = data.access_token;
+  
+    // Step 2: Use the access token to make API requests
+    const repoResponse = await fetch("/api/github/user/repos", {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+  
+    if (!repoResponse.ok) {
+      throw new Error("Failed to fetch repositories");
+    }
+  
+    const repositories = await repoResponse.json();
+    console.log(repositories);
+  }
+  
+  authenticateToGitHub().catch(console.error);
 
 export { authenticateToGitHub };
 

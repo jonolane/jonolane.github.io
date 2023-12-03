@@ -18,37 +18,11 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: external "/Users/jonathanlane/Documents/Development/Jono Lane/node_modules/react/index.js"
 var index_js_ = __webpack_require__(4410);
 var index_js_default = /*#__PURE__*/__webpack_require__.n(index_js_);
-// EXTERNAL MODULE: ./node_modules/@octokit/rest/dist-web/index.js + 13 modules
-var dist_web = __webpack_require__(8651);
-// EXTERNAL MODULE: ./node_modules/@octokit/auth-oauth-app/dist-src/index.js + 23 modules
-var dist_src = __webpack_require__(7580);
 ;// CONCATENATED MODULE: ./src/controllers/githubApi.ts
-
-
-async function authenticateToGitHub() {
-  const auth = (0,dist_src/* createOAuthAppAuth */.p)({
-    clientId: "f4dd4b030b4403ade3cb",
-    clientSecret: "39f3bf3502df43c59aa044284659bc75449411d2"
-  });
-  const authentication = await auth({
-    type: "oauth-user",
-    onVerification: () => {
-      // Handle the verification process here if needed
-    }
-  });
-  console.log("Authentication successful");
-  const octokit = new dist_web/* Octokit */.v({
-    auth: authentication.token
-  });
-
-  // Use the authenticated Octokit instance to make API requests
-  const response = await octokit.repos.listForAuthenticatedUser();
-  console.log(response.data);
-}
-authenticateToGitHub().catch(console.error);
-
-
-// using personal access token that has a rate limit
+/* provided dependency */ var fetch = __webpack_require__(1515);
+async function authenticateToGitHub(){const clientId="f4dd4b030b4403ade3cb";const clientSecret="39f3bf3502df43c59aa044284659bc75449411d2";const scopes=["repo"];// Step 1: Get the access token
+const response=await fetch(`/api/github/access_token?client_id=${clientId}&client_secret=${clientSecret}`,{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json"},body:JSON.stringify({grant_type:"client_credentials",scope:scopes.join(" ")})});if(!response.ok){throw new Error("Failed to authenticate with GitHub");}const data=await response.json();const accessToken=data.access_token;// Step 2: Use the access token to make API requests
+const repoResponse=await fetch("/api/github/user/repos",{headers:{Authorization:`Bearer ${accessToken}`}});if(!repoResponse.ok){throw new Error("Failed to fetch repositories");}const repositories=await repoResponse.json();console.log(repositories);}authenticateToGitHub().catch(console.error);// using personal access token that has a rate limit
 /*
 import { Octokit } from "@octokit/rest";
 

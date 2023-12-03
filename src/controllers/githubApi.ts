@@ -1,9 +1,7 @@
 import { Octokit } from "@octokit/rest";
 
-const PERSONAL_ACCESS_TOKEN = process.env.GATSBY_PERSONAL_ACCESS_TOKEN; 
-
 const octokit = new Octokit({
-    auth: PERSONAL_ACCESS_TOKEN,
+    auth: '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',
 });
 
 async function getRepositories() {

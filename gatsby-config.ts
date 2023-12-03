@@ -9,9 +9,11 @@ require('dotenv').config({
 });
 */
 
+/*
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+*/
 
 const config: GatsbyConfig = {
   // no pathPrefix necessary for GitHub Pages when using 'npm run deploy' script

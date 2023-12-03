@@ -4204,9 +4204,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _octokit_rest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @octokit/rest */ "./node_modules/@octokit/rest/dist-web/index.js");
 
-const PERSONAL_ACCESS_TOKEN = "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";
 const octokit = new _octokit_rest__WEBPACK_IMPORTED_MODULE_0__.Octokit({
-  auth: PERSONAL_ACCESS_TOKEN
+  auth: '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'
 });
 async function getRepositories() {
   const response = await octokit.repos.listForAuthenticatedUser();

@@ -21,7 +21,7 @@ var index_js_default = /*#__PURE__*/__webpack_require__.n(index_js_);
 // EXTERNAL MODULE: ./node_modules/@octokit/rest/dist-web/index.js + 37 modules
 var dist_web = __webpack_require__(1736);
 ;// CONCATENATED MODULE: ./src/controllers/githubApi.ts
-const PERSONAL_ACCESS_TOKEN="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";const octokit=new dist_web/* Octokit */.v({auth:PERSONAL_ACCESS_TOKEN});async function getRepositories(){const response=await octokit.repos.listForAuthenticatedUser();return response.data;}
+const octokit=new dist_web/* Octokit */.v({auth:'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'});async function getRepositories(){const response=await octokit.repos.listForAuthenticatedUser();return response.data;}
 ;// CONCATENATED MODULE: ./src/pages/index.tsx
 // import * as React from "react"
 

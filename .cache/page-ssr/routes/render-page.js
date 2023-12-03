@@ -4701,7 +4701,7 @@ function getForwards(collectedScripts) {
 /***/ 5418:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-exports.components={"component---src-pages-404-tsx":()=>__webpack_require__.e(/* import() | component---src-pages-404-tsx */ 218).then(__webpack_require__.bind(__webpack_require__, 2513)),"component---src-pages-index-tsx":()=>Promise.all(/* import() | component---src-pages-index-tsx */[__webpack_require__.e(736), __webpack_require__.e(691)]).then(__webpack_require__.bind(__webpack_require__, 301))};
+exports.components={"component---src-pages-404-tsx":()=>__webpack_require__.e(/* import() | component---src-pages-404-tsx */ 218).then(__webpack_require__.bind(__webpack_require__, 2513)),"component---src-pages-index-tsx":()=>Promise.all(/* import() | component---src-pages-index-tsx */[__webpack_require__.e(351), __webpack_require__.e(691)]).then(__webpack_require__.bind(__webpack_require__, 301))};
 
 /***/ }),
 

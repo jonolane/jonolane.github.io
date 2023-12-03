@@ -17,6 +17,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "@octokit/auth-oauth-app": "^7.0.1",
     "@octokit/rest": "^20.0.2",
     "autoprefixer": "^10.4.16",
     "dotenv": "^16.3.1",

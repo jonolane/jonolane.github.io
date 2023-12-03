@@ -1,5 +1,11 @@
 import type { GatsbyConfig } from "gatsby";
 
+// require('dotenv').config();
+
+require('dotenv').config({
+  path: process.env.NODE_ENV === 'Production' ? '.env.production' : '.env.development',
+});
+
 const config: GatsbyConfig = {
   // pathPrefix: '/public',
   siteMetadata: {

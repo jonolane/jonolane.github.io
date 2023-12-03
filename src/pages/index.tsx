@@ -1,14 +1,52 @@
-import * as React from "react"
+// import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
+import React, { useEffect, useState } from "react";
+import { getRepositories } from "../controllers/githubApi";
 
-const IndexPage: React.FC<PageProps> = () => {
-  return (
-    <main className="flex items-center justify-center h-screen bg-black">
-      <h1 className="text-white text-center text-4xl">Jono Lane</h1>
-    </main>
-  )
+interface Repository {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  license: {
+    key: string;
+    name: string;
+    url: string | null;
+    spdx_id: string | null;
+    node_id: string;
+    html_url?: string | undefined;
+  } | null;
+    description: string | null;
 }
 
-export default IndexPage
+const IndexPage: React.FC<PageProps> = () => {
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
-export const Head: HeadFC = () => <title>Home Page</title>
+  useEffect(() => {
+    const fetchRepositories = async () => {
+      const repos = await getRepositories();
+      setRepositories(repos);
+      console.log(repos);
+    };
+
+    fetchRepositories();
+  }, []);
+
+  return (
+    <main className="flex items-center justify-center h-screen bg-black">
+      <div className="max-w-md mx-auto p-4">
+        {repositories.map((repo) => (
+          <div key={repo.id} className="mb-4">
+            <h3 className="text-white text-xl font-bold">{repo.name}</h3>
+            <p className="text-gray-300">{repo.description}</p>
+            {/* Add more details or styling as needed */}
+          </div>
+        ))}
+      </div>
+    </main>
+  );
+};
+
+export default IndexPage;
+
+export const Head: HeadFC = () => <title>Jono Lane</title>;

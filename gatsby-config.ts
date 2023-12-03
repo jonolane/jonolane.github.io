@@ -1,10 +1,10 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
-  // pathPrefix: '/public',
+  pathPrefix: '/public',
   siteMetadata: {
     title: `Jono Lane`,
-    siteUrl: `https://www.jonolane.github.io/public`
+    siteUrl: `https://www.jonolane.github.io`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

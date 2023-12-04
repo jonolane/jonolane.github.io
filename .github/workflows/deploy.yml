@@ -21,10 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build -- --prefix-paths
-
       - name: Deploy to GitHub Pages
-        run: npx gh-pages -d public --dotfiles
+        run: npm run deploy
         env:
           JONO_TOKEN: ${{ secrets.JONO_TOKEN }}

@@ -3,15 +3,15 @@ import type { GatsbyConfig } from "gatsby";
 // require('dotenv').config();
 
 // works on dev server but not on production build
+/*
 require('dotenv').config({
   path: process.env.NODE_ENV === 'development' ? '.env.development' : '.env.production',
 });
+*/
 
-/*
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-*/
 
 const config: GatsbyConfig = {
   // no pathPrefix necessary for GitHub Pages when using 'npm run deploy' script

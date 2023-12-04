@@ -1,9 +1,7 @@
-export async function fetchRepositories() {
-    const accessToken = process.env.GATSBY_FINE_GRAINED_ACCESS_TOKEN;
-  
+export async function fetchRepositories() {  
     const repoResponse = await fetch("https://api.github.com/user/repos", {
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${process.env.GATSBY_FINE_GRAINED_ACCESS_TOKEN}`,
       },
     });
   

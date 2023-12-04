@@ -1,7 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
 
-// require('dotenv').config();
-
 // works on dev server but not on production build
 /*
 require('dotenv').config({
@@ -9,13 +7,12 @@ require('dotenv').config({
 });
 */
 
+// working ? feels more dynamic
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
 const config: GatsbyConfig = {
-  // no pathPrefix necessary for GitHub Pages when using 'npm run deploy' script
-  // pathPrefix: '/public',
   siteMetadata: {
     title: `Jono Lane`,
     siteUrl: `https://www.jonolane.github.io`

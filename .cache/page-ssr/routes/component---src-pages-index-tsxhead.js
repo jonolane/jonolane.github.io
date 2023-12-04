@@ -15,7 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* provided dependency */ var fetch = __webpack_require__(/*! ./node_modules/node-fetch/lib/index.js */ "./node_modules/node-fetch/lib/index.js");
 async function fetchRepositories() {
-  const accessToken = "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";
+  const accessToken = "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";
   const repoResponse = await fetch("https://api.github.com/user/repos", {
     headers: {
       Authorization: `Bearer ${accessToken}`

@@ -48,7 +48,7 @@ export const Head: HeadFC = () => <title>Jono Lane</title>;
 
 import type { HeadFC, PageProps } from "gatsby"
 import React, { useEffect, useState } from "react";
-import { authenticateToGitHub } from "../controllers/githubApi";
+import { fetchRepositories } from "../controllers/githubApi";
 
 interface Repository {
   id: number;
@@ -70,18 +70,16 @@ const IndexPage: React.FC<PageProps> = () => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getRepositories = async () => {
       try {
-        const repos = await authenticateToGitHub();
-        if (repos !== undefined && repos !== null) {
-          setRepositories(repos);
-        }
+        const repositories = await fetchRepositories();
+        setRepositories(repositories);
       } catch (error) {
-        console.error("Error fetching repositories:", error);
+        console.error(error);
       }
     };
-  
-    fetchData();
+
+    getRepositories();
   }, []);
 
   return (

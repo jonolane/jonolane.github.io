@@ -3,11 +3,9 @@ import type { GatsbyConfig } from "gatsby";
 // require('dotenv').config();
 
 // works on dev server but not on production build
-/*
 require('dotenv').config({
   path: process.env.NODE_ENV === 'Production' ? '.env.production' : '.env.development',
 });
-*/
 
 /*
 require('dotenv').config({

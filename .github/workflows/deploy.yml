@@ -5,10 +5,12 @@ on:
     branches:
       - main
 
+env:
+  JONO_TOKEN: ${{ secrets.JONO_TOKEN }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest 
-    environment: github-pages
     steps:
       - name: Checkout code
         uses: actions/checkout@v2

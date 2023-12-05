@@ -24,6 +24,11 @@ jobs:
       - name: Print secret value
         run: echo ${{ secrets.JONO_TOKEN }}
 
+      - name: GitHub Config
+        run: |
+              git config --global user.email "lane7520@gmail.com"
+              git config --global user.name "jonolane"
+
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:

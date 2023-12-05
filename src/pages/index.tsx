@@ -37,8 +37,8 @@ const IndexPage: React.FC<PageProps> = () => {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-center bg-black">
-      <div className="mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <main className="flex flex-col items-center justify-center bg-black h-screen">
+      <div className="max-w-screen-lg p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {repositories.map((repo) => (
           <Card key={repo.id} name={repo.name} description={repo.description} />
         ))}

@@ -1,7 +1,7 @@
 export async function fetchRepositories() {  
     const repoResponse = await fetch("https://api.github.com/user/repos", {
       headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${process.env.GH_TOKEN}`,
       },
     });
   
@@ -12,6 +12,3 @@ export async function fetchRepositories() {
     const repositories = await repoResponse.json();
     return repositories;
   }
-
-
-  // trying fetch

@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
 jobs:
   deploy:
@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Print secret value
-        run: echo ${{ secrets.GITHUB_TOKEN }}
+        run: echo ${{ secrets.GH_TOKEN }}
 
       - name: GitHub Config
         run: |

@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  JONO_TOKEN: ${{ secrets.JONO_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   deploy:
@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Print secret value
-        run: echo ${{ secrets.JONO_TOKEN }}
+        run: echo ${{ secrets.GITHUB_TOKEN }}
 
       - name: GitHub Config
         run: |
@@ -33,6 +33,3 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          JONO_TOKEN: ${{ secrets.JONO_TOKEN }}

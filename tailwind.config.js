@@ -5,7 +5,13 @@ module.exports = {
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        greatVibes: ['Great Vibes', 'Great Vibes'],
+        arizonia: ['Arizonia', 'Arizonia'],
+        windSong: ['WindSong', 'WindSong'],
+      },
+    },
   },
   plugins: [],
 }

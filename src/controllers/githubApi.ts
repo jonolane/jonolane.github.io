@@ -1,7 +1,7 @@
 export async function fetchRepositories() {  
     const repoResponse = await fetch("https://api.github.com/user/repos", {
       headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${process.env.GATSBY_FINE_GRAINED_ACCESS_TOKEN}`,
       },
     });
   
@@ -12,5 +12,3 @@ export async function fetchRepositories() {
     const repositories = await repoResponse.json();
     return repositories;
   }
-
-  // new PAT

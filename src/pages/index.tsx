@@ -2,6 +2,9 @@ import type { HeadFC, PageProps } from "gatsby"
 import React, { useEffect, useState } from "react";
 import { fetchRepositories } from "../controllers/githubApi";
 import Card from "../components/Card";
+import { StaticImage } from "gatsby-plugin-image";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faXTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 interface Repository {
   id: number;
@@ -37,13 +40,48 @@ const IndexPage: React.FC<PageProps> = () => {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-center bg-black h-screen">
-      <div className="max-w-screen-lg p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {repositories.map((repo) => (
-          <Card key={repo.id} name={repo.name} description={repo.description} />
-        ))}
+    <div className="flex flex-col items-center justify-center h-screen m-6">
+      <head>
+        {/* current favorite */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=WindSong&display=swap" rel="stylesheet" />
+
+      </head>
+      <div className="font-greatVibes text-9xl text-center text-white z-20 h-auto">
+        Jono Lane
       </div>
-    </main>
+      <div className="flex justify-center z-20 h-auto space-x-6 m-6">
+        <FontAwesomeIcon icon={faFacebook} className="text-white text-4xl" />
+        <FontAwesomeIcon icon={faXTwitter} className="text-white text-4xl" />
+        <FontAwesomeIcon icon={faInstagram} className="text-white text-4xl" />
+        <FontAwesomeIcon icon={faLinkedin} className="text-white text-4xl" />
+      </div>
+      <StaticImage
+        src="../images/gradient.jpg"
+        alt="Background Image"
+        className="absolute inset-0 w-full h-full opacity-90"
+        placeholder="none"
+        layout="fullWidth"
+        formats={["auto", "webp", "avif"]}
+        loading="eager"
+      />
+      <div className="flex items-center justify-center h-auto">
+        <div className="max-w-screen-lg p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 z-10">
+          {repositories.map((repo) => (
+            <Card key={repo.id} name={repo.name} description={repo.description} />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 

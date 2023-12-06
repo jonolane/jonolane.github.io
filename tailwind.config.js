@@ -10,8 +10,18 @@ module.exports = {
         greatVibes: ['Great Vibes', 'Great Vibes'],
         arizonia: ['Arizonia', 'Arizonia'],
         windSong: ['WindSong', 'WindSong'],
+        pixel: ['Pixelify Sans', 'Pixelify Sans'],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-typewriter')({
+      wordsets: {
+          devTitle: {
+              words: ['Web Developer', 'Software Engineer', 'Product Designer', 'QA Analyst'],
+              delay: .3,
+          }
+      }
+  })
+  ],
 }

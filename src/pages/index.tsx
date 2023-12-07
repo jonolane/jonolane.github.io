@@ -38,8 +38,8 @@ const IndexPage: React.FC<PageProps> = () => {
   // alternative custom gradient for parent div: bg-gradient-to-br from-purple-500 via-green-300 to-red-500
 
   return (
-    <div className="relative min-h-screen text-white">
-      <div className="absolute inset-0 bg-[url('../images/gradient.jpg')] bg-cover bg-repeat-round opacity-70"></div>
+    <div className="relative min-h-screen text-black">
+      <div className="absolute inset-0 bg-[url('../images/gradient3.jpg')] bg-cover bg-repeat-round opacity-70"></div>
       <div className="flex flex-col items-center justify-center p-6">
         <head>
           {/* current favorite */}
@@ -59,11 +59,15 @@ const IndexPage: React.FC<PageProps> = () => {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet" />
 
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+
         </head>
         <div className="sm:text-9xl font-arizonia text-8xl text-center z-50 mb-6 mt-8 lg:mt-10 md:mt-10 tracking-wide">
           Jono Lane
         </div>
-        <div className="text-4xl my-6 font-pixel text-white z-30">
+        <div className="text-4xl my-6 font-pixel text-black z-30">
           :// <span className="type-devTitle tracking-wide"></span>
         </div>
         <div className="flex items-center justify-center h-auto tracking-wide mb-2">

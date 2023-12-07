@@ -17,11 +17,13 @@ module.exports = {
   plugins: [
     require('tailwind-typewriter')({
       wordsets: {
-          devTitle: {
-              words: ['Web Developer', 'Software Engineer', 'Product Designer', 'QA Analyst'],
-              delay: .3,
-          }
+        devTitle: {
+          words: ['Web Developer', 'Software Engineer', 'Product Designer', 'QA Analyst'],
+          delay: 1,
+          writeSpeed: .3,
+          // caretColor: 'text-black',
+        }
       }
-  })
+    })
   ],
 }

@@ -12,7 +12,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ name, description, language, forks_count, stargazers_count }) => {
   return (
-    <div className="border border-solid border-black rounded-lg shadow-lg p-4 mb-4 flex flex-col text-black">
+    <div className="border border-solid border-white rounded-lg shadow-lg p-4 mb-4 flex flex-col text-white">
       <h3 className="text-xl font-bold">{name}</h3>
       <p className="flex-grow">{description}</p>
       <div className="flex justify-between items-end mt-4">

@@ -2,7 +2,6 @@ import type { HeadFC, PageProps } from "gatsby"
 import React, { useEffect, useState } from "react";
 import { fetchRepositories } from "../controllers/githubApi";
 import Card from "../components/Card";
-// import { StaticImage } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faXTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -46,8 +45,8 @@ const IndexPage: React.FC<PageProps> = () => {
   // alternative custom gradient for parent div: bg-gradient-to-br from-purple-500 via-green-300 to-red-500
 
   return (
-    <div className="relative min-h-screen">
-      <div className="absolute inset-0 bg-[url('../images/gradient.jpg')] bg-cover bg-repeat-round opacity-50 "></div>
+    <div className="relative min-h-screen text-white">
+      <div className="absolute inset-0 bg-[url('../images/gradient.jpg')] bg-cover bg-repeat-round opacity-70"></div>
       <div className="flex flex-col items-center justify-center p-6">
         <head>
           {/* current favorite */}
@@ -68,13 +67,13 @@ const IndexPage: React.FC<PageProps> = () => {
           <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet" />
 
         </head>
-        <div className="font-greatVibes text-9xl text-center z-20 mb-6 tracking-wide">
+        <div className="font-greatVibes text-9xl text-center z-50 mb-6 mt-8 tracking-wide">
           Jono Lane
         </div>
-        <div className="text-4xl my-6 font-pixel">
+        <div className="text-4xl my-6 font-pixel text-white z-30">
           :// <span className="type-devTitle tracking-wide"></span>
         </div>
-        <div className="flex items-center justify-center h-auto tracking-wide">
+        <div className="flex items-center justify-center h-auto tracking-wide mb-2">
           <div className="max-w-screen-lg p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 z-10">
             {repositories.map((repo) => (
               <Card key={repo.id} name={repo.name} description={repo.description} language={repo.language} stargazers_count={repo.stargazers_count} forks_count={repo.forks_count} />
@@ -88,7 +87,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <FontAwesomeIcon icon={faLinkedin} className="text-4xl hover:translate-y-[-2px] hover:scale-110 transition-all duration-300" />
           <FontAwesomeIcon icon={faEnvelope} className="text-4xl hover:translate-y-[-2px] hover:scale-110 transition-all duration-300" />
         </div>
-        <div className="text-xl mt-6 font-pixel cursor-pointer tracking-wide hover:animate-pulse" onClick={() => window.open('https://docs.google.com/document/d/199ejho-lgZ7_QVrCt01p2FxxJJTaxcv4p34mfUHaGCw/edit', '_blank')}>
+        <div className="text-xl my-6 font-pixel z-30 cursor-pointer tracking-wide hover:translate-y-[-2px] hover:scale-110 transition-all duration-300" onClick={() => window.open('https://docs.google.com/document/d/199ejho-lgZ7_QVrCt01p2FxxJJTaxcv4p34mfUHaGCw/edit', '_blank')}>
           Resume
         </div>
       </div>

@@ -1,7 +1,10 @@
 import { Octokit } from "@octokit/rest";
 
 export async function fetchRepositories() {
-  const octokit = new Octokit({ });
+  const octokit = new Octokit({ 
+    auth: 'proceess.env.TOKEN'
+  });
+  
 
   try {
     const response = await octokit.request("GET /user/repos", {

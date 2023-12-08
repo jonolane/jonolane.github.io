@@ -1,16 +1,11 @@
 import type { GatsbyConfig } from "gatsby";
 
-// works on dev server but not on production build
-/*
-require('dotenv').config({
-  path: process.env.NODE_ENV === 'development' ? '.env.development' : '.env.production',
-});
-*/
-
 // working ? feels more dynamic
+/*
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+*/
 
 // for if I go the vercel route
 /*

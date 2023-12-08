@@ -7,7 +7,7 @@ on:
 
 env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    JONO_TOKEN: ${{ secrets.JONO_TOKEN }}
+    GATSBY_TOKEN: ${{ secrets.GATSBY_TOKEN }}
 
 jobs:
   deploy:

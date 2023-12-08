@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-    github-pages: ${{ secrets.GATSBY_TOKEN }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   deploy:
@@ -32,6 +32,8 @@ jobs:
               git config --global user.name "jonolane"
 
       - name: Authenticate GitHub API
+        env:
+          github-pages: ${{ secrets.GATSBY_TOKEN }}
         run: |
               curl -L \
               -H "Accept: application/vnd.github+json" \

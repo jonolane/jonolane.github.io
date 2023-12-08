@@ -6,7 +6,12 @@ export async function fetchRepositories() {
   });
 
   try {
-    const response = await octokit.repos.listForAuthenticatedUser();
+    const response = await octokit.request("GET /user/repos", {
+      headers: {
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+    });
+
     const repositories = response.data;
     return repositories;
   } catch (error) {

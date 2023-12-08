@@ -21,10 +21,11 @@ interface Repository {
 const IndexPage: React.FC<PageProps> = () => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
 
+  const GATSBY_TOKEN = process.env.GATSBY_TOKEN;
   useEffect(() => {
     const getRepositories = async () => {
       try {
-        const repositories = await fetchRepositories();
+        const repositories = await fetchRepositories(GATSBY_TOKEN);
         setRepositories(repositories);
         console.log(repositories);
       } catch (error) {

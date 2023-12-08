@@ -1,13 +1,14 @@
 import { Octokit } from "@octokit/rest";
 
-export async function fetchRepositories() {
+export async function fetchRepositories(token: string | undefined) {
   const octokit = new Octokit({
-    auth: process.env.GATSBY_TOKEN,
+    auth: token,
   });
 
   try {
     const response = await octokit.request("GET /user/repos", {
       headers: {
+        Accept: "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28",
       },
     });

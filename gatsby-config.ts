@@ -1,11 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
 
 // working ? feels more dynamic
-/*
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-*/
 
 // for if I go the vercel route
 /*

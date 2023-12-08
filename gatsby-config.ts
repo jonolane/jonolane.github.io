@@ -8,8 +8,15 @@ require('dotenv').config({
 */
 
 // working ? feels more dynamic
+/*
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
+});
+*/
+
+// trying for vercels env variables
+require('dotenv').config({
+  path: process.env.NODE_ENV === 'Production' ? '.env.production' : '.env.development',
 });
 
 const config: GatsbyConfig = {

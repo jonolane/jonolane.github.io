@@ -18,7 +18,7 @@ module.exports = {
     require('tailwind-typewriter')({
       wordsets: {
         devTitle: {
-          words: ['Web Developer', 'Software Engineer', 'Product Designer', 'QA Analyst'],
+          words: ['Web Developer', 'Software Engineer', 'Product Designer', 'QA Analyst', 'Problem Solver'],
           delay: 1,
           writeSpeed: .3,
           // caretColor: 'white',

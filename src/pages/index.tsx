@@ -64,13 +64,13 @@ const IndexPage: React.FC<PageProps> = () => {
           <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
 
         </head>
-        <div className="sm:text-9xl font-arizonia text-8xl text-center z-50 mb-6 mt-8 lg:mt-10 md:mt-10 tracking-wide">
+        <div className="sm:text-9xl font-arizonia text-8xl text-center z-50 mb-4 mt-6 lg:mt-8 md:mt-8 tracking-wide">
           Jono Lane
         </div>
         <div className="text-4xl my-6 font-pixel text-black z-30">
           :// <span className="type-devTitle tracking-wide"></span>
         </div>
-        <div className="flex items-center justify-center h-auto tracking-wide mb-2">
+        <div className="flex items-center justify-center h-auto tracking-wide mb-6">
           <div className="max-w-screen-lg p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 z-10">
             {repositories.map((repo) => (
               <Card key={repo.id} name={repo.name} description={repo.description} language={repo.language} stargazers_count={repo.stargazers_count} forks_count={repo.forks_count} url={repo.html_url} />

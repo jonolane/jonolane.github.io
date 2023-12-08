@@ -4,7 +4,6 @@ export async function fetchRepositories() {
   const octokit = new Octokit({ 
     auth: 'proceess.env.TOKEN'
   });
-  
 
   try {
     const response = await octokit.request("GET /user/repos", {

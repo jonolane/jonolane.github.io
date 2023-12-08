@@ -33,7 +33,7 @@ jobs:
 
       - name: Run script
         run: |
-             node .github/actions-scripts/use-the-api.mjs
+             node src/contrllers/githubApi.ts
 
       - name: Deploy to GitHub Pages
         run: npm run deploy -u "github-actions-bot <support+actions@github.com>"

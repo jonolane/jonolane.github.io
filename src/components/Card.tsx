@@ -21,16 +21,16 @@ const Card: React.FC<CardProps> = ({ name, description, language, forks_count, s
 
   return (
     <div className="border border-solid border-black rounded-lg shadow-lg p-4 mb-4 flex flex-col text-black" onClick={handleCardClick}>
-      <h3 className="text-xl font-bold">{name}</h3>
-      <p className="flex-grow">{description}</p>
+      <h3 className="sm:text-xl font-bold">{name}</h3>
+      <p className="flex-grow sm:text-base text-sm">{description}</p>
       <div className="flex justify-between items-end mt-4">
         <div className="flex items-start">
-          <span>
-            <FontAwesomeIcon icon={faCircle} className="text-xs mr-1" />
+          <span className="sm:text-base text-sm">
+            <FontAwesomeIcon icon={faCircle} className="sm:text-xs text-[10px] mr-2" />
             {language}
           </span>
         </div>
-        <div className="flex items-end">
+        <div className="flex items-end sm:text-base text-sm">
           {forks_count > 0 && (
             <span className="mr-2">
               <FontAwesomeIcon icon={faCodeBranch} />
@@ -38,7 +38,7 @@ const Card: React.FC<CardProps> = ({ name, description, language, forks_count, s
             </span>
           )}
           {stargazers_count > 0 && (
-            <span className="">
+            <span>
               <FontAwesomeIcon icon={faStar} />
               <span className="ml-1">{stargazers_count}</span>
             </span>

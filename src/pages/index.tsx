@@ -41,14 +41,14 @@ const IndexPage: React.FC<PageProps> = () => {
     <div className="relative min-h-screen text-black">
       <div className="absolute inset-0 bg-[url('../images/gradient3.jpg')] bg-cover bg-repeat-round opacity-70"></div>
       <div className="flex flex-col items-center justify-center p-6">
-        <div className="sm:text-9xl text-8xl font-arizonia text-center z-50 mb-4 mt-6 lg:mt-8 md:mt-8 tracking-wide">
+        <div className="sm:text-8xl md:text-9xl text-7xl font-arizonia text-center z-50 mb-4 mt-6 lg:mt-8 md:mt-8 tracking-wide">
           Jono Lane
         </div>
         <div className="sm:text-4xl md:text-4xl text-3xl my-6 font-pixel text-black z-30">
           :// <span className="type-devTitle tracking-wide"></span>
         </div>
         <div className="flex items-center justify-center h-auto tracking-wide mb-6">
-          <div className="max-w-screen-lg p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 z-10">
+          <div className="max-w-screen-lg sm:p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 z-10 p-6">
             {repositories.map((repo) => (
               <Card key={repo.id} name={repo.name} description={repo.description} language={repo.language} stargazers_count={repo.stargazers_count} forks_count={repo.forks_count} url={repo.html_url} />
             ))}

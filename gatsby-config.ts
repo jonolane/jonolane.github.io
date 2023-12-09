@@ -1,16 +1,16 @@
 import type { GatsbyConfig } from "gatsby";
 
 // working ? feels more dynamic
+/*
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+*/
 
 // for if I go the vercel route
-/*
 require('dotenv').config({
   path: process.env.NODE_ENV === 'Production' ? '.env.production' : '.env.development',
 });
-*/
 
 const config: GatsbyConfig = {
   siteMetadata: {

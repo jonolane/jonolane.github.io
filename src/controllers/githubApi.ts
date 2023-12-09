@@ -1,3 +1,4 @@
+/*
 import { Octokit } from "@octokit/rest";
 
 export async function fetchRepositories() {
@@ -19,12 +20,12 @@ export async function fetchRepositories() {
     throw new Error("Failed to fetch repositories");
   }
 }
+*/
 
-/*
 export async function fetchRepositories() {  
     const repoResponse = await fetch("https://api.github.com/user/repos", {
       headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${process.env.GATSBY_FINE_GRAINED_ACCESS_TOKEN}`,
       },
     });
   
@@ -35,4 +36,4 @@ export async function fetchRepositories() {
     const repositories = await repoResponse.json();
     return repositories;
   }
-  */
+  

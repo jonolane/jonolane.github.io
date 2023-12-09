@@ -41,10 +41,10 @@ const IndexPage: React.FC<PageProps> = () => {
     <div className="relative min-h-screen text-black">
       <div className="absolute inset-0 bg-[url('../images/gradient3.jpg')] bg-cover bg-repeat-round opacity-70"></div>
       <div className="flex flex-col items-center justify-center p-6">
-        <div className="sm:text-9xl font-arizonia text-8xl text-center z-50 mb-4 mt-6 lg:mt-8 md:mt-8 tracking-wide">
+        <div className="sm:text-9xl text-8xl font-arizonia text-center z-50 mb-4 mt-6 lg:mt-8 md:mt-8 tracking-wide">
           Jono Lane
         </div>
-        <div className="text-4xl my-6 font-pixel text-black z-30">
+        <div className="sm:text-4xl md:text-4xl text-3xl my-6 font-pixel text-black z-30">
           :// <span className="type-devTitle tracking-wide"></span>
         </div>
         <div className="flex items-center justify-center h-auto tracking-wide mb-6">

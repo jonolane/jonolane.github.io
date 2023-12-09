@@ -1,29 +1,5 @@
-/*
-import { Octokit } from "@octokit/rest";
-
-export async function fetchRepositories() {
-  const octokit = new Octokit({ 
-    auth: 'proceess.env.GATSBY_FINE_GRAINED_ACCESS_TOKEN'
-  });
-
-  try {
-    const response = await octokit.request("GET /user/repos", {
-      headers: {
-        Accept: "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-      },
-    });
-
-    const repositories = response.data;
-    return repositories;
-  } catch (error) {
-    throw new Error("Failed to fetch repositories");
-  }
-}
-*/
-
 export async function fetchRepositories() {  
-    const repoResponse = await fetch("https://api.github.com/user/repos", {
+    const repoResponse = await fetch("https://api.github.com/user/repos?sort=created", {
       headers: {
         Authorization: `Bearer ${process.env.GATSBY_FINE_GRAINED_ACCESS_TOKEN}`,
       },
@@ -36,4 +12,5 @@ export async function fetchRepositories() {
     const repositories = await repoResponse.json();
     return repositories;
   }
+
   

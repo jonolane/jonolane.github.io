@@ -21,7 +21,6 @@ module.exports = {
           words: ['Web Developer', 'Software Engineer', 'Product Designer', 'QA Analyst', 'Problem Solver'],
           delay: 1,
           writeSpeed: .3,
-          // caretColor: 'white',
         }
       }
     })

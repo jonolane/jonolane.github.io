@@ -2,7 +2,7 @@ import { Octokit } from "@octokit/rest";
 
 export async function fetchRepositories() {
   const octokit = new Octokit({ 
-    auth: 'proceess.env.TOKEN'
+    auth: 'proceess.env.GATSBY_TOKEN'
   });
 
   try {

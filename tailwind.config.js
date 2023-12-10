@@ -11,6 +11,7 @@ module.exports = {
         arizonia: ['Arizonia', 'Arizonia'],
         windSong: ['WindSong', 'WindSong'],
         pixel: ['Pixelify Sans', 'Pixelify Sans'],
+        sans: ['Helvetica', 'sans-serif', 'Arial'],
       },
     },
   },

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCodeBranch, faStar, faCircle } from "@fortawesome/free-solid-svg-icons";
+import { AppContext } from '../controllers/AppContext';
 
 interface CardProps {
   name: string;
@@ -12,6 +13,8 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ name, description, language, forks_count, stargazers_count, url }) => {
+  const appContext = useContext(AppContext);
+  const { isDarkMode } = appContext || {};
 
   const handleCardClick = () => {
     if (url) {
@@ -20,7 +23,7 @@ const Card: React.FC<CardProps> = ({ name, description, language, forks_count, s
   };
 
   return (
-    <div className="border border-solid border-black rounded-lg shadow-lg p-4 mb-4 flex flex-col text-black" onClick={handleCardClick}>
+    <div className={`border border-solid ${isDarkMode ? 'border-white' : 'border-black'} rounded-lg shadow-lg p-4 mb-4 flex flex-col ${isDarkMode ? 'text-white' : 'text-black'}`} onClick={handleCardClick}>
       <h3 className="sm:text-xl font-bold">{name}</h3>
       <p className="flex-grow sm:text-base text-sm">{description}</p>
       <div className="flex justify-between items-end mt-4">

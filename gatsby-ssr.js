@@ -1,5 +1,3 @@
-import "./src/styles/global.css"
-
 import React from 'react';
 import { AppProvider } from './src/controllers/AppContext';
 

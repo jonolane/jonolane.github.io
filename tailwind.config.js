@@ -6,6 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      
+      // remove if you want pitch black
+      colors: {
+        black: '#111111',
+      },
+
       fontFamily: {
         greatVibes: ['Great Vibes', 'Great Vibes'],
         arizonia: ['Arizonia', 'Arizonia'],

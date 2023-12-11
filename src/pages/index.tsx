@@ -53,7 +53,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <div className="flex flex-col sm:items-center justify-center sm:p-6 z-50">
 
         <nav className="z-50 flex sm:items-center justify-between sm:flex-row mx-6">
-          <div className="font-sans sm:text-8xl md:text-9xl text-3xl sm:text-center z-50 mb-4 mt-6 lg:mt-8 md:mt-8 tracking-wide">
+          <div className={` ${isDarkMode ? 'font-arizonia' : ''} sm:text-8xl md:text-9xl text-3xl sm:text-center z-50 mb-4 mt-6 lg:mt-8 md:mt-8 tracking-wide`}>
             Jono Lane
           </div>
           <span className="sm:hidden items-end my-auto pt-2 z-50 cursor-pointer" onClick={() => appContext?.setIsDarkMode && appContext.setIsDarkMode(!isDarkMode)}>
@@ -67,7 +67,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <p className="sm:hidden mt-4 mx-6 mb-20 tracking-wide leading-relaxed max-w-md">
             I'm Jono Lane, a full-stack developer based in Nashville. I enjoy creating impactful products that adapt to the ever-changing landscape of technology.
           </p>
-          <h2 className="sm:hidden border-t border-black border-solid mx-7 uppercase pt-2 tracking-wide">
+          <h2 className={`sm:hidden border-t ${isDarkMode ? 'border-white' : 'border-black'} border-solid mx-7 uppercase pt-2 tracking-wide`}>
             Latest work
           </h2>
         </div>

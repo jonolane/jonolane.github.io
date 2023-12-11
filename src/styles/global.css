@@ -1,28 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-/* works but at a different opacity 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-    position: relative;
-  }
   
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url('../images/gradient3.jpg');
-    background-size: cover;
-    background-repeat: round;
-    opacity: 0.7;
-    z-index: -1;
-  }
-  */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: #111111;
+  z-index: -1;
+}

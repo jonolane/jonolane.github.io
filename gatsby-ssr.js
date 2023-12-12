@@ -20,6 +20,6 @@ export const onInitialClientRender = () => {
     document.head.appendChild(styleElement);
   };
 
-  setTimeout(applyDelayedStyles, 2000); 
+  setTimeout(applyDelayedStyles, 4000); 
   console.log("onInitialClientRender complete");
 };

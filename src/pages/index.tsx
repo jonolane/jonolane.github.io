@@ -96,7 +96,6 @@ const Head: React.FC<HeadProps> = () => {
 
   useEffect(() => {
     document.body.className = isDarkMode ? 'before:bg-black text-white before:z-[-1]' : 'before:fixed before:bg-[url("../images/gradient3.jpg")] before:bg-cover before:bg-repeat-round before:opacity-60 before:z-[-1] before:inset-0';
-    console.log(`useEffect says: ${isDarkMode}`);
   }, [isDarkMode]);
 
   return (

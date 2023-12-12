@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
+/* can change back to these to avoid browser api
 body::before {
   content: "";
   position: fixed;
@@ -9,3 +10,4 @@ body::before {
   background-color: #111111;
   z-index: -1;
 }
+*/

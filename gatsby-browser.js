@@ -1,7 +1,4 @@
 import "./src/styles/global.css"
-
-// import "./src/controllers/backgroundStyleScript.ts"
-
 import React from 'react';
 import { AppProvider } from './src/controllers/AppContext';
 
@@ -9,6 +6,9 @@ export const wrapRootElement = ({ element }) => {
   return <AppProvider>{element}</AppProvider>;
 };
 
+
+// accounting for black body
+/*
 export const onInitialClientRender = () => {
   const applyDelayedStyles = () => {
     const styleElement = document.createElement('style');
@@ -27,3 +27,4 @@ export const onInitialClientRender = () => {
   setTimeout(applyDelayedStyles, 4000); 
   console.log("onInitialClientRender complete");
 };
+*/

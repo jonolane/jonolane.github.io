@@ -5,6 +5,8 @@ export const wrapRootElement = ({ element }) => {
   return <AppProvider>{element}</AppProvider>;
 };
 
+// accounting for black body
+/*
 export const onInitialClientRender = () => {
   const applyDelayedStyles = () => {
     const styleElement = document.createElement('style');
@@ -23,3 +25,7 @@ export const onInitialClientRender = () => {
   setTimeout(applyDelayedStyles, 4000); 
   console.log("onInitialClientRender complete");
 };
+*/
+
+
+// ideal time probably two seconds if I can get it to stop displaying immmediately 

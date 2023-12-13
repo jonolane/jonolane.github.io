@@ -27,7 +27,7 @@ export const onInitialClientRender = () => {
 */
 // ideal time probably two seconds if I can get it to stop displaying immmediately 
 
-exports.onRenderBody = ({ setPostBodyComponents }) => {
+export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
     <script
       key="applyDelayedStyles"

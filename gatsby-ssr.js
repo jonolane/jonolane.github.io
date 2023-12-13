@@ -27,6 +27,8 @@ export const onInitialClientRender = () => {
 */
 // ideal time probably two seconds if I can get it to stop displaying immmediately 
 
+
+/*
 export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
     <script
@@ -51,3 +53,4 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
     />,
   ]);
 };
+*/

@@ -7,8 +7,7 @@ export const wrapRootElement = ({ element }) => {
 };
 
 
-// accounting for black body
-/*
+// accounting for black body. removed z-index: -1;
 export const onInitialClientRender = () => {
   const applyDelayedStyles = () => {
     const styleElement = document.createElement('style');
@@ -18,7 +17,7 @@ export const onInitialClientRender = () => {
         position: fixed;
         inset: 0;
         background-color: #111111;
-        z-index: -1;
+        
       }
     `;
     document.head.appendChild(styleElement);
@@ -27,4 +26,3 @@ export const onInitialClientRender = () => {
   setTimeout(applyDelayedStyles, 4000); 
   console.log("onInitialClientRender complete");
 };
-*/

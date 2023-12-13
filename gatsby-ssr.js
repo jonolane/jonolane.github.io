@@ -5,7 +5,7 @@ export const wrapRootElement = ({ element }) => {
   return <AppProvider>{element}</AppProvider>;
 };
 
-// accounting for black body
+// accounting for black body. removed z-index: -1; not allowed on gatsby-ssr.js
 /*
 export const onInitialClientRender = () => {
   const applyDelayedStyles = () => {
@@ -16,7 +16,6 @@ export const onInitialClientRender = () => {
         position: fixed;
         inset: 0;
         background-color: #111111;
-        z-index: -1;
       }
     `;
     document.head.appendChild(styleElement);
@@ -26,6 +25,29 @@ export const onInitialClientRender = () => {
   console.log("onInitialClientRender complete");
 };
 */
-
-
 // ideal time probably two seconds if I can get it to stop displaying immmediately 
+
+exports.onRenderBody = ({ setPostBodyComponents }) => {
+  setPostBodyComponents([
+    <script
+      key="applyDelayedStyles"
+      dangerouslySetInnerHTML={{
+        __html: `
+          setTimeout(function() {
+            var styleElement = document.createElement('style');
+            styleElement.innerHTML = \`
+              body::before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                background-color: #111111;
+              }
+            \`;
+            document.head.appendChild(styleElement);
+            console.log("onRenderBody complete");
+          }, 4000);
+        `,
+      }}
+    />,
+  ]);
+};

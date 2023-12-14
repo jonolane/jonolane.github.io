@@ -46,11 +46,12 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <div className="min-h-screen relative">
       {/* <div className={`absolute inset-0 bg-[url('../images/gradient3.jpg')] bg-cover bg-repeat-round opacity-70`} /> */}
-      <div className={`relative ${isDarkMode ? 'bg-black text-white' : ''}`}>
+      <div className={`relative ${isDarkMode ? 'bg-black text-white' : ''}`}> 
         <div className="flex flex-col sm:items-center justify-center sm:p-6 z-50">
           <Navbar />
           <div className="z-50">
-            <div className={`sm:text-4xl md:text-4xl text-4xl sm:my-6 mt-10 font-pixel ${isDarkMode ? 'text-white' : 'text-black'} sm:text-center sm:ml-auto ml-6`}>            <span className="max-sm:hidden">:// </span><span className="type-devTitle tracking-wide"></span>
+            <div className={`sm:text-4xl md:text-4xl text-4xl sm:my-6 mt-10 font-pixel ${isDarkMode ? 'text-white' : 'text-black'} sm:text-center sm:ml-auto ml-6`}>            
+              <span className="max-sm:hidden">:// </span><span className="type-devTitle tracking-wide"></span>
             </div>
             <p className="sm:hidden mt-4 mx-6 mb-20 tracking-wide leading-relaxed max-w-md">
               I'm Jono Lane, a full-stack developer based in Nashville. I enjoy creating impactful products that adapt to the ever-changing landscape of technology.
@@ -101,6 +102,12 @@ const Head: React.FC<HeadProps> = () => {
   }, [isDarkMode]);
   */
 
+  /*
+  useEffect(() => {
+    document.body.className = isDarkMode ? 'bg-black text-white before:z-[-1]' : 'before:fixed before:bg-[url("../images/gradient3.jpg")] before:bg-cover before:bg-repeat-round before:opacity-60 before:z-[-1] before:inset-0';
+  }, [isDarkMode]);
+  */
+
   return (
     <>
       <title>Jono Lane</title>
@@ -127,7 +134,7 @@ const Head: React.FC<HeadProps> = () => {
       {/* mobile loading fix? */}
       <link rel="preload" href="../images/gradient3.jpg" as="image" />
       {/* ::before directive might be creating slow bg image load */}
-      <body className={`${isDarkMode ? 'before:bg-black text-white' : 'before:fixed before:bg-[url("../images/gradient3.jpg")] before:bg-cover before:bg-repeat-round before:opacity-60 before:inset-0'}`} />
+      {/*opacity-60 or 70 was here */}<body className={`${isDarkMode ? 'before:bg-black text-white' : 'before:fixed before:bg-[url("../images/gradient3.jpg")] before:bg-cover before:bg-repeat-round before:inset-0 before:z-[-1]'}`} />
     </>
   )
 }

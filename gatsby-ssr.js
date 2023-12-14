@@ -28,6 +28,7 @@ export const onInitialClientRender = () => {
 // ideal time probably two seconds if I can get it to stop displaying immmediately 
 
 // seeing if this works on phone
+/*
 export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
     <script
@@ -52,3 +53,4 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
     />,
   ]);
 };
+*/

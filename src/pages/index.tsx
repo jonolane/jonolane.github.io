@@ -45,7 +45,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <div className="min-h-screen relative">
-      {/* pre-use of head <div className={`absolute inset-0 bg-[url('../images/gradient3.jpg')] bg-cover bg-repeat-round opacity-70`} />*/}
+      <div className={`absolute inset-0 bg-[url('../images/gradient3.jpg')] bg-cover bg-repeat-round opacity-70`} />
       <div className={`relative ${isDarkMode ? 'bg-black text-white' : ''}`}>
         <div className="flex flex-col sm:items-center justify-center sm:p-6 z-50">
           <Navbar />
@@ -124,7 +124,7 @@ const Head: React.FC<HeadProps> = () => {
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
 
-      <body className={`${isDarkMode ? 'before:bg-black text-white' : 'before:fixed before:bg-[url("../images/gradient3.jpg")] before:bg-cover before:bg-repeat-round before:opacity-60 before:z-[-1] before:inset-0'}`} />
+      {/*<body className={`${isDarkMode ? 'before:bg-black text-white' : 'before:fixed before:bg-[url("../images/gradient3.jpg")] before:bg-cover before:bg-repeat-round before:opacity-60 before:z-[-1] before:inset-0'}`} />*/}
     </>
   )
 }

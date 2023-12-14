@@ -124,7 +124,9 @@ const Head: React.FC<HeadProps> = () => {
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
 
-      <body className={`${isDarkMode ? 'before:bg-black text-white' : 'before:fixed before:bg-[url("../images/gradient3.jpg")] before:bg-cover before:bg-repeat-round before:opacity-60 before:z-[-1] before:inset-0'}`} />
+      {/* mobile loading fix? */}
+      <link rel="preload" href="../images/gradient3.jpg" as="image" />
+      <body className={`${isDarkMode ? 'bg-black text-white z-[-1]' : 'fixed bg-[url("../images/gradient3.jpg")] bg-cover bg-repeat-round opacity-60 inset-0'}`} />
     </>
   )
 }

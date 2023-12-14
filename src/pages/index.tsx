@@ -126,7 +126,8 @@ const Head: React.FC<HeadProps> = () => {
 
       {/* mobile loading fix? */}
       <link rel="preload" href="../images/gradient3.jpg" as="image" />
-      <body className={`${isDarkMode ? 'bg-black text-white z-[-1]' : 'fixed bg-[url("../images/gradient3.jpg")] bg-cover bg-repeat-round opacity-60 inset-0'}`} />
+      {/* ::before directive might be creating slow bg image load */}
+      <body className={`${isDarkMode ? 'before:bg-black text-white' : 'before:fixed before:bg-[url("../images/gradient3.jpg")] before:bg-cover before:bg-repeat-round before:opacity-60 before:inset-0'}`} />
     </>
   )
 }

@@ -46,11 +46,11 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <div className="min-h-screen relative">
       {/* <div className={`absolute inset-0 bg-[url('../images/gradient3.jpg')] bg-cover bg-repeat-round opacity-70`} /> */}
-      <div className={`relative ${isDarkMode ? 'bg-black text-white' : ''}`}> 
+      <div className={`relative ${isDarkMode ? 'bg-black text-white' : ''}`}>
         <div className="flex flex-col sm:items-center justify-center sm:p-6 z-50">
           <Navbar />
           <div className="z-50">
-            <div className={`sm:text-4xl md:text-4xl text-4xl sm:my-6 mt-10 font-pixel ${isDarkMode ? 'text-white' : 'text-black'} sm:text-center sm:ml-auto ml-6`}>            
+            <div className={`sm:text-4xl md:text-4xl text-4xl sm:my-6 mt-10 font-pixel ${isDarkMode ? 'text-white' : 'text-black'} sm:text-center sm:ml-auto ml-6`}>
               <span className="max-sm:hidden">:// </span><span className="type-devTitle tracking-wide"></span>
             </div>
             <p className="sm:hidden mt-4 mx-6 mb-20 tracking-wide leading-relaxed max-w-md">
@@ -131,10 +131,26 @@ const Head: React.FC<HeadProps> = () => {
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
 
-      {/* mobile loading fix? */}
-      <link rel="preload" href="../images/gradient3.jpg" as="image" />
-      {/* ::before directive might be creating slow bg image load */}
-      {/*opacity-60 or 70 was here */}<body className={`${isDarkMode ? 'before:bg-black text-white' : 'before:fixed before:bg-[url("../images/gradient4.jpg")] before:bg-cover before:bg-repeat-round before:inset-0 before:z-[-1]'}`} />
+      {/* <link rel="preload" href="../images/gradient3.jpg" as="image" /> */}
+
+      {/* ::before directive might be creating slow bg image load. opacity-60 or 70 was here */}
+      {/* before:md:fixed before:absolute works on safari, before:fixed works on chrome | need to just somehow lose bg-background on sm: for chrome!*/}
+      {/* fall back would be to lose the safari directives */}
+      <body
+        className={`
+          ${isDarkMode
+            ? 'before:bg-black text-white'
+            : `safari:before:absolute
+               safari:before:md:fixed
+               before:fixed
+               before:bg-[url("../images/gradient4.jpg")] 
+               before:bg-cover 
+               before:bg-repeat-round 
+               before:inset-0 
+               before:z-[-1]`
+          }
+      `}
+      />    
     </>
   )
 }

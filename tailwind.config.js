@@ -30,6 +30,7 @@ module.exports = {
           writeSpeed: .3,
         }
       }
-    })
+    }),
+    require("@igorkowalczyk/is-browser"),
   ],
 }

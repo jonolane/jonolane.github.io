@@ -42,16 +42,16 @@ const IndexPage: React.FC<PageProps> = () => {
   useEffect(() => { console.log(isDarkMode) });
 
   // alternative custom gradient for parent div: bg-gradient-to-br from-purple-500 via-green-300 to-red-500
-
+  // flex flex-col justify-center items-center on parent div centers elements on tablet but breaks safari mobile queries
   return (
-    <div className="min-h-screen relative flex flex-col justify-center items-center">
+    <div className="min-h-screen relative ">
       {/* <div className={`absolute inset-0 bg-[url('../images/gradient3.jpg')] bg-cover bg-repeat-round opacity-70`} /> */}
       <div className={`relative ${isDarkMode ? 'bg-black text-white' : ''}`}>
         <div className="flex flex-col sm:items-center justify-center sm:p-6 z-50">
           <Navbar />
           <div className="z-50">
             <div className={`xs:text-4xl xxs:text-3xl text-2xl sm:my-6 mt-10 font-pixel ${isDarkMode ? 'text-white' : 'text-black'} sm:text-center sm:ml-auto ml-6`}>
-              <span className="max-sm:hidden">:// </span><span className="type-devTitle tracking-wide"></span>
+              <span className="sm:inline hidden">:// </span><span className="type-devTitle tracking-wide"></span>
             </div>
             <p className="xs:text-base xs:leading-relaxed xxs:text-sm xxs:leading-relaxed text-xs leading-relaxed sm:hidden mt-4 mx-6 xs:mb-20 mb-16 tracking-wide max-w-md">
               I'm Jono Lane, a full-stack developer based in Nashville. I enjoy creating impactful products that adapt to the ever-changing landscape of technology.

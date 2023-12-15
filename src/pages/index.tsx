@@ -44,7 +44,7 @@ const IndexPage: React.FC<PageProps> = () => {
   // alternative custom gradient for parent div: bg-gradient-to-br from-purple-500 via-green-300 to-red-500
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative flex flex-col justify-center items-center">
       {/* <div className={`absolute inset-0 bg-[url('../images/gradient3.jpg')] bg-cover bg-repeat-round opacity-70`} /> */}
       <div className={`relative ${isDarkMode ? 'bg-black text-white' : ''}`}>
         <div className="flex flex-col sm:items-center justify-center sm:p-6 z-50">

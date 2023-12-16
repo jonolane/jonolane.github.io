@@ -11,7 +11,7 @@ module.exports = {
     screens: {
       'xs': '379px',
       'xxs': '320px',
-      'tablet': {'raw': '(max-height: 1368px),(min-width:820px)'},
+      'tablet': {'raw': '(min-width: 820px) and (min-height: 950px)'},
       ...defaultTheme.screens,
     },
     extend: {

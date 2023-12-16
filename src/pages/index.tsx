@@ -44,7 +44,7 @@ const IndexPage: React.FC<PageProps> = () => {
   // alternative custom gradient for parent div: bg-gradient-to-br from-purple-500 via-green-300 to-red-500
   // flex flex-col justify-center items-center on parent div centers elements on tablet but breaks safari mobile queries
   return (
-    <div className="min-h-screen relative ">
+    <div className="min-h-screen relative tablet:flex tablet:flex-col tablet:justify-center tablet:items-center">
       {/* <div className={`absolute inset-0 bg-[url('../images/gradient3.jpg')] bg-cover bg-repeat-round opacity-70`} /> */}
       <div className={`relative ${isDarkMode ? 'bg-black text-white' : ''}`}>
         <div className="flex flex-col sm:items-center justify-center sm:p-6 z-50">

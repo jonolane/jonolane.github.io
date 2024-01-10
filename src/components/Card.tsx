@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({ name, description, language, forks_count, s
   };
 
   return (
-    <div className={`border border-solid ${isDarkMode ? 'border-white' : 'border-black'} rounded-lg shadow-lg p-4 mb-4 flex flex-col ${isDarkMode ? 'text-white' : 'text-black'}`} onClick={handleCardClick}>
+    <div className={`hover:opacity-80 transition-opacity ease-in-out border border-solid ${isDarkMode ? 'border-white' : 'border-black'} rounded-lg shadow-lg p-4 mb-4 flex flex-col ${isDarkMode ? 'text-white' : 'text-black'}`} onClick={handleCardClick}>
       <h3 className="sm:text-xl font-bold">{name}</h3>
       <p className="flex-grow sm:text-base text-sm">{description}</p>
       <div className="flex justify-between items-end mt-4">

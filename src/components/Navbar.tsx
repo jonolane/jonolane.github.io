@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
       <div className={`pl-6 ${isDarkMode ? 'font-arizonia' : ''} sm:text-8xl md:text-9xl text-3xl sm:text-center z-50 mb-4 mt-6 lg:mt-8 md:mt-8 tracking-wide`}>
         Jono Lane
       </div>
-      <span className="sm:hidden items-end my-auto pt-2 z-50 cursor-pointer" onClick={() => appContext?.setIsDarkMode && appContext.setIsDarkMode(!isDarkMode)}>
+      <span className="sm:hidden items-end my-auto pt-2 z-50 cursor-pointer hover:translate-y-[-2px] hover:scale-110 transition-all duration-300" onClick={() => appContext?.setIsDarkMode && appContext.setIsDarkMode(!isDarkMode)}>
         <FontAwesomeIcon icon={faLightbulb} className="text-2xl" />
       </span>
     </nav>

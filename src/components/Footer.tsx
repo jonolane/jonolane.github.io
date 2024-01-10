@@ -21,11 +21,11 @@ const Footer = () => {
           onClick={() => appContext?.setIsDarkMode && appContext.setIsDarkMode(!isDarkMode)}
         />
         <div className='flex sm:hidden'>
-        <FontAwesomeIcon
-          icon={faXTwitter}
-          className="sm:hidden block sm:text-4xl text-2xl hover:translate-y-[-2px] hover:scale-110 transition-all duration-300 -ml-6"
-          onClick={() => handleLinkClick('https://twitter.com/jlane_')}
-        />
+          <FontAwesomeIcon
+            icon={faXTwitter}
+            className="sm:hidden block sm:text-4xl text-2xl hover:translate-y-[-2px] hover:scale-110 transition-all duration-300 -ml-6"
+            onClick={() => handleLinkClick('https://twitter.com/jlane_')}
+          />
         </div>
         <FontAwesomeIcon
           icon={faFacebook}
@@ -50,11 +50,10 @@ const Footer = () => {
       </div>
       <div
         className="sm:text-xl text-lg my-6 font-pixel cursor-pointer tracking-wide hover:translate-y-[-2px] hover:scale-110 transition-all duration-300 text-center"
-        onClick={() =>
-          handleLinkClick('https://docs.google.com/document/d/199ejho-lgZ7_QVrCt01p2FxxJJTaxcv4p34mfUHaGCw/edit')
-        }
       >
-        Resume
+        <a href="/JonoLaneResume.pdf" target="_blank" rel="noopener noreferrer" className="text-current no-underline">
+          Resume
+        </a>
       </div>
     </footer>
   );

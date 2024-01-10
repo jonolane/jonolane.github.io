@@ -51,7 +51,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <Navbar />
           <div className="z-50">
             <div className={`xs:text-4xl xxs:text-3xl text-2xl sm:my-6 mt-10 font-pixel ${isDarkMode ? 'text-white' : 'text-black'} sm:text-center sm:ml-auto ml-6`}>
-              <span className="sm:inline hidden">:// </span><span className="type-devTitle tracking-wide"></span>
+              <span className="chrome:sm:inline firefox:sm:inline hidden">:// </span><span className="type-devTitle tracking-wide"></span>
             </div>
             <p className="xs:text-base xs:leading-relaxed xxs:text-sm xxs:leading-relaxed text-xs leading-relaxed sm:hidden mt-4 mx-6 xs:mb-20 mb-16 tracking-wide max-w-md">
               I'm Jono Lane, a full-stack developer based in Nashville. I enjoy creating impactful products that adapt to the ever-changing landscape of technology.
@@ -131,11 +131,16 @@ const Head: React.FC<HeadProps> = () => {
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
 
-      {/* <link rel="preload" href="../images/gradient3.jpg" as="image" /> */}
-
       {/* ::before directive might be creating slow bg image load. opacity-60 or 70 was here */}
       {/* before:md:fixed before:absolute works on safari, before:fixed works on chrome | need to just somehow lose bg-background on sm: for chrome!*/}
       {/* fall back would be to lose the safari directives */}
+
+      {/* for .svg background
+          before:bg-[url("../images/gradient7OMG.svg")]  
+          before:bg-cover 
+          before:bg-center
+          before:bg-no-repeat 
+      */}
       <body
         className={`
           ${isDarkMode
@@ -145,7 +150,7 @@ const Head: React.FC<HeadProps> = () => {
                before:fixed
                before:bg-[url("../images/gradient4.jpg")] 
                before:bg-cover 
-               before:bg-repeat-round 
+               before:bg-repeat-round
                before:inset-0 
                before:z-[-1]`
           }

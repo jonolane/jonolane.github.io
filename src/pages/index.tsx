@@ -111,10 +111,10 @@ const Head: React.FC<HeadProps> = () => {
   return (
     <>
       {/* linkedin og: tags for preview */}
-      <meta property="og:title" content="Jono Lane" />
-      <meta property="og:description" content="Personal portfolio showcasing my projects." />
-      <meta property="og:image" content="https://jonolane.io/JonoPortfolioStill.jpg" />
-      <meta property="og:url" content="https://jonolane.io" />
+      <meta name="title" property="og:title" content="Jono Lane" />
+      <meta name="description" property="og:description" content="Personal portfolio showcasing my projects." />
+      <meta name="image" property="og:image" content="https://jonolane.io/JonoPortfolioStill.jpg" />
+      <meta name="description" property="og:url" content="https://jonolane.io" />
 
       <title>Jono Lane</title>
       <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -131,8 +131,12 @@ const Head: React.FC<HeadProps> = () => {
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
 
-      {/* ::before directive might be creating slow bg image load. opacity-60 or 70 was here */}
-      {/* before:md:fixed before:absolute works on safari, before:fixed works on chrome | need to just somehow lose bg-background on sm: for chrome!*/}
+      {/* linkedin og: tags for preview */}
+      <meta property="og:title" content="Jono Lane" />
+      <meta property="og:description" content="Personal portfolio showcasing my projects." />
+      <meta property="og:image" content="https://jonolane.io/JonoPortfolioStill.png" />
+      <meta property="og:url" content="https://jonolane.io" />
+
       {/* fall back would be to lose the safari directives */}
 
       {/* for .svg background
@@ -141,6 +145,9 @@ const Head: React.FC<HeadProps> = () => {
           before:bg-center
           before:bg-no-repeat 
       */}
+
+      {/* safari:before:absolute
+          safari:before:md:fixed  not necessary? */}
       <body
         className={`
           ${isDarkMode
@@ -155,7 +162,7 @@ const Head: React.FC<HeadProps> = () => {
                before:z-[-1]`
           }
       `}
-      />    
+      />
     </>
   )
 }

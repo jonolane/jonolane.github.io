@@ -7,7 +7,7 @@ export const wrapRootElement = ({ element }) => {
 };
 
 
-// accounting for black body. removed z-index: -1;
+// accounting for black body. removed z-index: -1. 2000 the right amount of time for production build?;
 export const onInitialClientRender = () => {
   const applyDelayedStyles = () => {
     const styleElement = document.createElement('style');
@@ -23,6 +23,6 @@ export const onInitialClientRender = () => {
     document.head.appendChild(styleElement);
   };
 
-  setTimeout(applyDelayedStyles, 2000); 
+  setTimeout(applyDelayedStyles, 100); 
   console.log("onInitialClientRender complete");
 };

@@ -110,6 +110,12 @@ const Head: React.FC<HeadProps> = () => {
 
   return (
     <>
+      {/* linkedin og: tags for preview */}
+      <meta property="og:title" content="Jono Lane" />
+      <meta property="og:description" content="Personal portfolio showcasing my projects." />
+      <meta property="og:image" content="https://jonolane.io/JonoPortfolioStill.jpg" />
+      <meta property="og:url" content="https://jonolane.io" />
+
       <title>Jono Lane</title>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -130,12 +136,6 @@ const Head: React.FC<HeadProps> = () => {
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
-
-      {/* linkedin og: tags for preview */}
-      <meta property="og:title" content="Jono Lane" />
-      <meta property="og:description" content="Personal portfolio showcasing my projects." />
-      <meta property="og:image" content="https://jonolane.io/JonoPortfolioStill.png" />
-      <meta property="og:url" content="https://jonolane.io" />
 
       {/* fall back would be to lose the safari directives */}
 

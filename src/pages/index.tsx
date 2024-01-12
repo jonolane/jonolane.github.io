@@ -39,9 +39,8 @@ const IndexPage: React.FC<PageProps> = () => {
     getRepositories();
   }, []);
 
-  useEffect(() => { console.log(isDarkMode) });
+  // useEffect(() => { console.log(isDarkMode) });
 
-  // alternative custom gradient for parent div: bg-gradient-to-br from-purple-500 via-green-300 to-red-500
   // flex flex-col justify-center items-center on parent div centers elements on tablet but breaks safari mobile queries
   return (
     <div className="min-h-screen relative tablet:flex tablet:flex-col tablet:justify-center tablet:items-center">
@@ -92,7 +91,7 @@ interface HeadProps {
 }
 
 // export breaks on dev server?
-const Head: React.FC<HeadProps> = () => {
+export const Head: React.FC<HeadProps> = () => {
   const appContext = useContext(AppContext);
   const { isDarkMode } = appContext || {};
 
@@ -112,7 +111,7 @@ const Head: React.FC<HeadProps> = () => {
   return (
     <>
       {/* og: tags for seo crawling */}
-      <meta name="image" property="og:image" content="https://jonolane.io/preview2.jpg" />
+      <meta name="image" property="og:image" content="https://jonolane.io/preview1.gif" />
       <meta name="title" property="og:title" content="Jono Lane" />
       <meta name="description" property="og:description" content="I'm Jono Lane, a full-stack developer based in Nashville. I enjoy creating impactful products that adapt to the ever-changing landscape of technology." />
       {/* <meta name="url" property="og:url" content="https://jonolane.io" /> */}

@@ -91,8 +91,8 @@ interface HeadProps {
   isDarkMode: boolean | undefined;
 }
 
-// export?
-export const Head: React.FC<HeadProps> = () => {
+// export breaks on dev server?
+const Head: React.FC<HeadProps> = () => {
   const appContext = useContext(AppContext);
   const { isDarkMode } = appContext || {};
 
@@ -111,7 +111,7 @@ export const Head: React.FC<HeadProps> = () => {
 
   return (
     <>
-      {/* linkedin og: tags for preview */}
+      {/* og: tags for seo crawling */}
       <meta name="image" property="og:image" content="https://jonolane.io/preview2.jpg" />
       <meta name="title" property="og:title" content="Jono Lane" />
       <meta name="description" property="og:description" content="I'm Jono Lane, a full-stack developer based in Nashville. I enjoy creating impactful products that adapt to the ever-changing landscape of technology." />

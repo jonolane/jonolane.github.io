@@ -21,7 +21,7 @@ interface Repository {
 
 const IndexPage: React.FC<PageProps> = () => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
-  // dark theme
+  const [isShowFooter, setShowFooter] = useState<boolean>(false);
   const appContext = useContext(AppContext);
   const { isDarkMode } = appContext || {};
 
@@ -30,6 +30,7 @@ const IndexPage: React.FC<PageProps> = () => {
       try {
         const repositories = await fetchRepositories();
         setRepositories(repositories);
+        setShowFooter(true);
         console.log(repositories);
       } catch (error) {
         console.error(error);
@@ -78,7 +79,7 @@ const IndexPage: React.FC<PageProps> = () => {
               </div>
             </div>
           </main>
-          <Footer />
+          {isShowFooter && <Footer />}
           <Head isDarkMode={isDarkMode} />
         </div>
       </div>
@@ -90,23 +91,10 @@ interface HeadProps {
   isDarkMode: boolean | undefined;
 }
 
-// export breaks on dev server?
+// "export" here breaks on dev server
 export const Head: React.FC<HeadProps> = () => {
   const appContext = useContext(AppContext);
   const { isDarkMode } = appContext || {};
-
-  // attempting to drop useEffect to improve performance
-  /*
-  useEffect(() => {
-    document.body.className = isDarkMode ? 'before:bg-black text-white before:z-[-1]' : 'before:fixed before:bg-[url("../images/gradient3.jpg")] before:bg-cover before:bg-repeat-round before:opacity-60 before:z-[-1] before:inset-0';
-  }, [isDarkMode]);
-  */
-
-  /*
-  useEffect(() => {
-    document.body.className = isDarkMode ? 'bg-black text-white before:z-[-1]' : 'before:fixed before:bg-[url("../images/gradient3.jpg")] before:bg-cover before:bg-repeat-round before:opacity-60 before:z-[-1] before:inset-0';
-  }, [isDarkMode]);
-  */
 
   return (
     <>

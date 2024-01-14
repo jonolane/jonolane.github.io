@@ -24,8 +24,9 @@ const IndexPage: React.FC<PageProps> = () => {
   const [isShowFooter, setShowFooter] = useState<boolean>(false);
   const appContext = useContext(AppContext);
   const { isDarkMode } = appContext || {};
-  const [hasInitialLoadOccurred, setHasInitialLoadOccurred] = useState(sessionStorage.getItem('hasInitialLoadOccurred') === 'true');
-
+  const [hasInitialLoadOccurred, setHasInitialLoadOccurred] = useState(
+    typeof window !== 'undefined' && window.sessionStorage.getItem('hasInitialLoadOccurred') === 'true'
+  );
   useEffect(() => {
     const getRepositories = async () => {
       try {
@@ -43,8 +44,8 @@ const IndexPage: React.FC<PageProps> = () => {
 
   // one time animation per session
   useEffect(() => {
-    if (isShowFooter && !hasInitialLoadOccurred) {
-      sessionStorage.setItem('hasInitialLoadOccurred', 'true');
+    if (isShowFooter && !hasInitialLoadOccurred && typeof window !== 'undefined') {
+      window.sessionStorage.setItem('hasInitialLoadOccurred', 'true');
       setHasInitialLoadOccurred(true);
     }
   }, [isShowFooter]);

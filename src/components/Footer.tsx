@@ -4,7 +4,11 @@ import { faFacebook, faXTwitter, faInstagram, faLinkedin } from '@fortawesome/fr
 import { faEnvelope, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { AppContext } from '../controllers/AppContext';
 
-const Footer = () => {
+interface FooterProps {
+  className?: string; 
+}
+
+const Footer: React.FC<FooterProps> = ({ className }) => {
   const appContext = useContext(AppContext);
   const isDarkMode = appContext?.isDarkMode;
 

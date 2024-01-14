@@ -24,6 +24,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const [isShowFooter, setShowFooter] = useState<boolean>(false);
   const appContext = useContext(AppContext);
   const { isDarkMode } = appContext || {};
+  const [hasInitialLoadOccurred, setHasInitialLoadOccurred] = useState(sessionStorage.getItem('hasInitialLoadOccurred') === 'true');
 
   useEffect(() => {
     const getRepositories = async () => {
@@ -39,6 +40,16 @@ const IndexPage: React.FC<PageProps> = () => {
 
     getRepositories();
   }, []);
+
+  // one time animation per session
+  useEffect(() => {
+    if (isShowFooter && !hasInitialLoadOccurred) {
+      sessionStorage.setItem('hasInitialLoadOccurred', 'true');
+      setHasInitialLoadOccurred(true);
+    }
+  }, [isShowFooter]);
+
+  const animationClasses = hasInitialLoadOccurred ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0';
 
   // useEffect(() => { console.log(isDarkMode) });
 
@@ -61,7 +72,7 @@ const IndexPage: React.FC<PageProps> = () => {
             </h2>
           </div>
 
-          <main className="z-50">
+          <main className={`z-50 transition-all duration-500 ${animationClasses}`}>
             {/* bio used to live here */}
             <div className="flex items-center justify-center h-auto tracking-wide mb-6">
               <div className="max-w-screen-lg sm:p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-4 gap-2 z-10 px-6 pb-6 pt-4">
@@ -79,7 +90,7 @@ const IndexPage: React.FC<PageProps> = () => {
               </div>
             </div>
           </main>
-          {isShowFooter && <Footer />}
+          {isShowFooter && <Footer className={`transition-all duration-500 ${animationClasses}`} />}
           <Head isDarkMode={isDarkMode} />
         </div>
       </div>

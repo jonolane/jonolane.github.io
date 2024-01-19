@@ -118,7 +118,7 @@ export const Head: React.FC<HeadProps> = () => {
 
       {/* twitter SEO cards */}
       <meta name="twitter:card" property="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="https://jonolane.io/preview1.gif" />
+      <meta name="twitter:image" content="https://jonolane.io/preview2.jpg" />
       <meta name="twitter:title" property="twitter:title" content="Jono Lane" />
       <meta name="twitter:description" property="twitter:description" content="I'm Jono Lane, a full-stack developer based in Nashville. I enjoy creating impactful products that adapt to the ever-changing landscape of technology." />
 
